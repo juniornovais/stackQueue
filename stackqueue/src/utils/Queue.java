@@ -8,30 +8,29 @@ public class Queue {
 
     int count = 0;
 
-
-    public void finalQueue(char value){
+    public void finalQueue(char value) {
         Node newNode = new Node(value);
 
-        if(isEmpty()){
+        if (isEmpty()) {
             before = newNode;
             after = newNode;
-        } else{
+        } else {
             after.setNext(newNode);
             after = newNode;
         }
 
         count++;
+
     }
 
-
-    public char initQueue(){
-        if(isEmpty()){
+    public char initQueue() {
+        if (isEmpty()) {
             throw new Error("Fila vazia.");
         }
 
         char value = before.getValue();
         before = before.getNext();
-        
+
         if (before == null) {
             after = null;
         }
@@ -47,4 +46,5 @@ public class Queue {
     public int size() {
         return count;
     }
+
 }
